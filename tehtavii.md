@@ -113,4 +113,93 @@ root@debianmaster:/home/eetu/gitti# git blame minungitti.txt
 
 f) Tee uusi salt-moduli. Voit asentaa ja konfiguroida minkä vain uuden ohjelman: demonin, työpöytäohjelman tai komentokehotteesta toimivan ohjelman. Käytä tarvittaessa ‘find -printf “%T+ %p\n”|sort’ löytääksesi uudet asetustiedostot. (Tietysti eri ohjelma kuin aiemmissa tehtävissä, tarkoitushan on harjoitella Salttia)
 
+eetu@ubuntu:/srv/salt/install-web$ sudo salt '*' state.apply install-web
+eetu:
+----------
+          ID: nginx
+    Function: pkg.installed
+      Result: True
+     Comment: The following packages were installed/updated: nginx
+     Started: 02:02:30.940859
+    Duration: 8222.313 ms
+     Changes:   
+              ----------
+              libnginx-mod-http-geoip:
+                  ----------
+                  new:
+                      1.14.0-0ubuntu1.7
+                  old:
+              libnginx-mod-http-image-filter:
+                  ----------
+                  new:
+                      1.14.0-0ubuntu1.7
+                  old:
+              libnginx-mod-http-xslt-filter:
+                  ----------
+                  new:
+                      1.14.0-0ubuntu1.7
+                  old:
+              libnginx-mod-mail:
+                  ----------
+                  new:
+                      1.14.0-0ubuntu1.7
+                  old:
+              libnginx-mod-stream:
+                  ----------
+                  new:
+                      1.14.0-0ubuntu1.7
+                  old:
+              nginx:
+                  ----------
+                  new:
+                      1.14.0-0ubuntu1.7
+                  old:
+              nginx-common:
+                  ----------
+                  new:
+                      1.14.0-0ubuntu1.7
+                  old:
+              nginx-core:
+                  ----------
+                  new:
+                      1.14.0-0ubuntu1.7
+                  old:
+----------
+          ID: /var/www/html/index.html
+    Function: file.managed
+      Result: True
+     Comment: File /var/www/html/index.html updated
+     Started: 02:02:39.164797
+    Duration: 11.525 ms
+     Changes:   
+              ----------
+              diff:
+                  --- 
+                  +++ 
+                  @@ -1,2 +1,2 @@
+                  -MOIKKA APASSI!
+                  +NGINX TESTI SIVU
+                   
+----------
+          ID: nginx.service
+    Function: service.running
+        Name: nginx
+      Result: True
+     Comment: Service restarted
+     Started: 02:02:39.511111
+    Duration: 51.061 ms
+     Changes:   
+              ----------
+              nginx:
+                  True
+
+Summary for eetu
+------------
+Succeeded: 3 (changed=3)
+Failed:    0
+------------
+Total states run:     3
+Total run time:   8.285 s
+
+
 d) Vapaaehtoinen: Laita srv/salt/ gittiin. Tee uusi moduli. Kloonaa varastosi toiselle koneelle (tai poista srv/salt ja palauta se kloonaamalla) ja jatka sillä.
