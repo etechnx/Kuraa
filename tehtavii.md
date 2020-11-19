@@ -202,4 +202,6 @@ Total states run:     3
 Total run time:   8.285 s
 
 
+<a href="https://ibb.co/1rJ87FH"><img src="https://i.ibb.co/Mc5MZFq/nkikxstesti.jpg" alt="nkikxstesti" border="0" /></a>
+
 d) Vapaaehtoinen: Laita srv/salt/ gittiin. Tee uusi moduli. Kloonaa varastosi toiselle koneelle (tai poista srv/salt ja palauta se kloonaamalla) ja jatka sillä.
